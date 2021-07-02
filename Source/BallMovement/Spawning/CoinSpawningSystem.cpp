@@ -60,6 +60,7 @@ void ACoinSpawningSystem::BeginPlay()
 	{
 		MeshCoin->DestroyComponent();
 	}
+	
 	for (int index = 0 ; index <=  FGenericPlatformMath::TruncToInt(SplineComponent->GetSplineLength() / Spacing ) ; index++)	
 	{
 		if(GetWorld())
@@ -69,6 +70,7 @@ void ACoinSpawningSystem::BeginPlay()
 			if(CoinWeAreSpawning)
 			{
 				FActorSpawnParameters SpawnParams;
+				// Spawning our interactive pick up coins 
 				GetWorld()->SpawnActor<APickUp>(CoinWeAreSpawning, CoinLocation , CoinRotation , SpawnParams);
 			}
 
